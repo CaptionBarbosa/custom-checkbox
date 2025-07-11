@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./styles.css";
 
-function App() {
+const App = () => {
+  const handleCheckboxClick = () => {
+    const nativeCheckBox = document.getElementById("nativeCheckbox");
+    nativeCheckBox.checked = !nativeCheckBox.checked;
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="checkbox" className={["visually-hidden-checkbox"]} id="nativeCheckbox" />
+      <div className={"customCheckbox"} onClick={() => handleCheckboxClick()} />
     </div>
   );
-}
+};
 
 export default App;
