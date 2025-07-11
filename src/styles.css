@@ -11,14 +11,23 @@
 	width: 1px;
 }
 
+.checkboxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+}
+
+.native-checkbox {
+    width: 24px;
+    height: 24px;
+}
+
 .customCheckbox {
     height: 64px;
     width: 64px;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border: 2px solid black;
     border-radius: 3px;
     background-color: white;
@@ -32,6 +41,16 @@
 }
 
 .visually-hidden-checkbox:checked+.customCheckbox {
+    background-image: url("./checkmark.svg");
+    background-size: contain;
+}
+
+.nativeCheckbox:focus-visible+.customCheckbox {
+    outline: 2px solid blue;
+    outline-offset: 2px;
+}
+
+.nativeCheckbox:checked+.customCheckbox {
     background-image: url("./checkmark.svg");
     background-size: contain;
 }

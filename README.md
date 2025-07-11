@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This custom Checkbox is a custom styled component that links its functionality to a hidden React input checkbox. The native component manages state while the custom component mirrors its value and user input controls.
 
-By default the native checkbox is visually-hidden, meaning it is not rendered but retains accessibility controls.
+By default the native checkbox is visually-hidden, meaning it is not rendered but retains accessibility controls. To show native checkbox, replace className 'visually-hidden-checkbox" with "native-checkbox" in the input component with id="nativeCheckbox"
 
 The custom checkbox can be clicked and tab-accessed to check/ uncheck.
 

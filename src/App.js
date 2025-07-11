@@ -8,7 +8,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="checkboxContainer">
       <input type="checkbox" className={["visually-hidden-checkbox"]} id="nativeCheckbox" />
       <div className={"customCheckbox"} onClick={() => handleCheckboxClick()} />
     </div>
