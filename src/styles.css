@@ -1,16 +1,8 @@
-.visually-hidden-checkbox {
-	border: 0;
-	clip: rect(0 0 0 0); 
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	white-space: nowrap; 
-	width: 1px;
+.hiddenCheckbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
-
 .checkboxContainer {
     display: flex;
     flex-direction: column;
@@ -29,28 +21,23 @@
     width: 64px;
     padding: 10px;
     border: 2px solid black;
-    border-radius: 3px;
+    border-radius: 6px;
     background-color: white;
     margin: 3px 3px 4px 4px;
     box-sizing: border-box;
 }
 
-.visually-hidden-checkbox:focus-visible+.customCheckbox {
+.checkmark {
+    width: 100%;
+    height: 100%;
+    filter: invert(100%)
+}
+
+.hiddenCheckbox:focus-visible+.customCheckbox {
     outline: 2px solid blue;
     outline-offset: 2px;
 }
 
-.visually-hidden-checkbox:checked+.customCheckbox {
-    background-image: url("./checkmark.svg");
-    background-size: contain;
-}
-
-.nativeCheckbox:focus-visible+.customCheckbox {
-    outline: 2px solid blue;
-    outline-offset: 2px;
-}
-
-.nativeCheckbox:checked+.customCheckbox {
-    background-image: url("./checkmark.svg");
-    background-size: contain;
+.hiddenCheckbox:checked+.customCheckbox {
+    background-color: black;
 }
