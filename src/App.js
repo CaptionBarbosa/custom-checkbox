@@ -1,17 +1,22 @@
 import "./App.css";
 import "./styles.css";
+import checkmarkIcon from "./checkmark.svg";
 
 const App = () => {
-  const handleCheckboxClick = () => {
-    const nativeCheckBox = document.getElementById("nativeCheckbox");
-    nativeCheckBox.checked = !nativeCheckBox.checked;
-  };
+  document
+    .querySelector("customCheckbox")
+    ?.addEventListener("click", function () {
+      const nativeCheckBox = document.querySelector("nativeCheckbox");
+      nativeCheckBox.checked = !nativeCheckBox.checked;
+    });
 
   return (
-    <div className="checkboxContainer">
-      <input type="checkbox" className={["visually-hidden-checkbox"]} id="nativeCheckbox" />
-      <div className={"customCheckbox"} onClick={() => handleCheckboxClick()} />
-    </div>
+    <label className="checkboxContainer">
+      <input type="checkbox" className="hiddenCheckbox" id="nativeCheckbox" />
+      <span className={"customCheckbox"} id="customCheckbox">
+        <img src={checkmarkIcon} alt="checkmark" className="checkmark" />
+      </span>
+    </label>
   );
 };
 
